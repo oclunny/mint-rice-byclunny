@@ -14,6 +14,8 @@ mint-rice-byclunny/
 ├── theme/      → Kripton v40 theme
 ├── icons/      → Gruvbox-Plus icon pack, my custom icons and the folder color script
 ├── neofetch/   → neofetch config (config.conf)
+├── cursor/     → macOS cursor pack
+├── ulauncher/  → Matcha-Dark-Azul theme for Ulauncher
 ├── others/     → download links and the fish shell commands
 └── README.md
 ```
@@ -175,19 +177,46 @@ funcsave fish_greeting
 
 ---
 
-## Step 5 · Cursor
+## Step 5 · Cursor (macOS)
 
-📂 Folder: `others/`
+📂 Folder: `cursor/`
 
-> **TODO:** add the cursor name, download link and install steps.
+1. Extract the cursor pack into your icons folder (it contains two cursors: `macOS` and `macOS-White`):
+
+```bash
+tar -xf cursor/macOS.tar.xz -C ~/.icons
+```
+
+2. Open **System Settings → Themes → Mouse Pointer** and select **macOS** (black) or **macOS-White**.
+
+> Original cursor pack: [gnome-look.org/p/1408466](https://www.gnome-look.org/p/1408466)
 
 ---
 
 ## Step 6 · Ulauncher + theme
 
-📂 Folder: `others/`
+📂 Folder: `ulauncher/`
 
-> **TODO:** add the Ulauncher install and theme steps.
+1. Install Ulauncher:
+
+```bash
+sudo add-apt-repository universe -y
+sudo add-apt-repository ppa:agornostal/ulauncher -y
+sudo apt update
+sudo apt install ulauncher -y
+```
+
+2. Extract my theme (Matcha-Dark-Azul) into the Ulauncher themes folder:
+
+```bash
+mkdir -p ~/.config/ulauncher/user-themes
+tar -xf ulauncher/Matcha-Dark-Azul-ulauncher.tar.gz -C ~/.config/ulauncher/user-themes
+```
+
+3. Start Ulauncher, open its **Preferences** (the gear icon, or `Ctrl + ,`), go to **Appearance** and select **Matcha-Dark-Azul**.
+
+> Original theme: [DaveHigs/Matcha-Dark-Azul-ulauncher](https://github.com/DaveHigs/Matcha-Dark-Azul-ulauncher)
+> More Ulauncher themes: [gist](https://gist.github.com/gornostal/02a232e6e560da7946c053555ced6cce)
 
 ---
 
@@ -205,4 +234,6 @@ Don't want to do it step by step? One command installs the whole rice:
 
 - Kripton theme: [gnome-look.org/p/1365372](https://www.gnome-look.org/p/1365372)
 - Gruvbox-Plus icon pack: [gnome-look.org/p/1961046](https://www.gnome-look.org/p/1961046)
+- macOS cursor pack: [gnome-look.org/p/1408466](https://www.gnome-look.org/p/1408466)
+- Matcha-Dark-Azul Ulauncher theme: [DaveHigs](https://github.com/DaveHigs/Matcha-Dark-Azul-ulauncher)
 - Custom icons, neofetch config and guide: [oclunny](https://github.com/oclunny)
