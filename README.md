@@ -42,20 +42,6 @@ mkdir -p ~/.themes ~/.icons ~/.config/neofetch
 
 ---
 
-## Step 0 · Install Linux Mint
-
-1. Download the ISO (Cinnamon edition) from [linuxmint.com](https://linuxmint.com/download.php).
-2. Flash it to a USB stick with Balena Etcher, Rufus or the Mint **USB Image Writer**.
-3. Boot from the USB (usually `F2`, `F12` or `Esc` at startup) and choose **Start Linux Mint**.
-4. Double-click **Install Linux Mint** and follow the installer.
-5. Reboot, remove the USB and update the system:
-
-```bash
-sudo apt update && sudo apt upgrade -y
-```
-
----
-
 ## Step 1 · Theme (Kripton v40)
 
 📂 Folder: `theme/`
@@ -79,7 +65,7 @@ tar -xf theme/Kripton-v40.tar.xz -C ~/.themes
 
 📂 Folder: `icons/`
 
-This step has 3 parts: the icon pack, my custom icons and the folder color script.
+This step has 3 parts: the icon pack, your folder color and (optionally) my custom icons.
 
 ### 2.1 Install the Gruvbox-Plus icon pack
 
@@ -89,18 +75,7 @@ tar -xf icons/gruvbox-plus-icon-pack.6.6.0.tar.gz -C ~/.icons
 
 > Original icon pack: [gnome-look.org/p/1961046](https://www.gnome-look.org/p/1961046)
 
-### 2.2 Add my custom icons
-
-Copy everything inside `icons/icons-byclunny/` into the icon pack, replacing the existing icons:
-
-```bash
-cp -r icons/icons-byclunny/* ~/.icons/Gruvbox-Plus-Dark/places/scalable/
-```
-
-> When asked, choose **replace all**.
-> The color script below only works with **Gruvbox-Plus-Dark**, so use that version.
-
-### 2.3 Change the folder color
+### 2.2 Choose your folder color
 
 Make the script executable and run it with the color you want:
 
@@ -120,6 +95,17 @@ Other options:
 | `./icons/folders-color-chooser.sh -l` | List all colors |
 | `./icons/folders-color-chooser.sh -C` | Reset to the default color (`plasma`) |
 | `./icons/folders-color-chooser.sh -h` | Show help |
+
+### 2.3 Add my custom icons (optional)
+
+Copy everything inside `icons/icons-byclunny/` into the icon pack, replacing the existing icons:
+
+```bash
+cp -r icons/icons-byclunny/* ~/.icons/Gruvbox-Plus-Dark/places/scalable/
+```
+
+> When asked, choose **replace all**.
+> The color script below only works with **Gruvbox-Plus-Dark**, so use that version.
 
 ### 2.4 Apply the icons
 
