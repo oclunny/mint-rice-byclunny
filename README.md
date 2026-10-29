@@ -3,7 +3,10 @@
 My **Linux Mint** rice, packed in one repo so you can replicate it step by step.
 Gruvbox colors, a clean terminal and a custom look from top to bottom.
 
-> **PREVIEW IMAGE HERE** (add a screenshot of the full desktop)
+<p align="center">
+  <img src="desktop.png" alt="Desktop preview 1" width="49%">
+  <img src="desktop2.png" alt="Desktop preview 2" width="49%">
+</p>
 
 > ⚡ **Just want the full rice without any manual steps?** Skip everything and jump to the [Final step](#-final-step--install-everything-automatically). One command installs and applies it all.
 
@@ -223,7 +226,7 @@ tar -xf ulauncher/Matcha-Dark-Azul-ulauncher.tar.gz -C ~/.config/ulauncher/user-
 
 ---
 
-## Final step · Install everything automatically
+## ⚡ Final step · Install everything automatically
 
 Don't want to do it step by step? This one command clones the repo and installs and applies the whole rice:
 
