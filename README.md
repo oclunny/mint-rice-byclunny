@@ -5,6 +5,8 @@ Gruvbox colors, a clean terminal and a custom look from top to bottom.
 
 > **PREVIEW IMAGE HERE** (add a screenshot of the full desktop)
 
+> ⚡ **Just want the full rice without any manual steps?** Skip everything and jump to the [Final step](#-final-step--install-everything-automatically). One command installs and applies it all.
+
 ---
 
 ## 📁 Repository structure
