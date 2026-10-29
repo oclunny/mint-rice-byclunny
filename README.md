@@ -17,6 +17,7 @@ mint-rice-byclunny/
 ├── cursor/     → macOS cursor pack
 ├── ulauncher/  → Matcha-Dark-Azul theme for Ulauncher
 ├── others/     → download links and the fish shell commands
+├── install.sh  → installs and applies the whole rice automatically
 └── README.md
 ```
 
@@ -222,11 +223,26 @@ tar -xf ulauncher/Matcha-Dark-Azul-ulauncher.tar.gz -C ~/.config/ulauncher/user-
 
 ## ⚡ Final step · Install everything automatically
 
-Don't want to do it step by step? One command installs the whole rice:
+Don't want to do it step by step? This one command clones the repo and installs and applies the whole rice:
 
 ```bash
-# COMMAND COMING SOON
+sudo apt update && sudo apt install -y git && git clone https://github.com/oclunny/mint-rice-byclunny.git && cd mint-rice-byclunny && chmod +x install.sh && ./install.sh
 ```
+
+What it does:
+
+1. Installs the dependencies (git, curl, neofetch, fish...)
+2. Installs and applies the **Kripton v40** theme
+3. Installs **Gruvbox-Plus-Dark**, sets the folder color to **grey** and pastes my custom icons on top
+4. Copies my neofetch config
+5. Installs fish + oh-my-fish, makes fish your default shell and runs neofetch on startup
+6. Installs and applies the **macOS** cursor
+7. Installs Ulauncher, applies the **Matcha-Dark-Azul** theme and starts it with the system
+
+When it finishes, **log out and log back in** so everything applies.
+
+> Want another folder color? Open `install.sh`, change `FOLDER_COLOR="grey"` at the top and run it again.
+> The script is made for **Linux Mint Cinnamon**. On other editions it installs everything but you have to select the theme, icons and cursor manually.
 
 ---
 
