@@ -226,7 +226,6 @@ tar -xf ulauncher/Matcha-Dark-Azul-ulauncher.tar.gz -C ~/.config/ulauncher/user-
 
 ---
 
-<<<<<<< HEAD
 ## 🍵 Final step · Install everything automatically
 
 Don't want to do it step by step? This one command clones the repo and installs and applies the whole rice:
