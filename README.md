@@ -1,4 +1,4 @@
-# 🌿 mint-rice-byclunny
+# 🌿🍂 mint-rice-byclunny
 
 My **Linux Mint** rice, packed in one repo so you can replicate it step by step.
 Gruvbox colors, a clean terminal and a custom look from top to bottom.
@@ -8,11 +8,11 @@ Gruvbox colors, a clean terminal and a custom look from top to bottom.
   <img src="desktop2.png" alt="Desktop preview 2" width="49%">
 </p>
 
-> ⚡ **Just want the full rice without any manual steps?** Skip everything and jump to the [Final step](#-final-step--install-everything-automatically). One command installs and applies it all.
+> 🍵 **Just want the full rice without any manual steps?** Skip everything and jump to the [Final step](#-final-step--install-everything-automatically). One command installs and applies it all.
 
 ---
 
-## 📁 Repository structure
+## 🏡 Repository structure
 
 ```
 mint-rice-byclunny/
@@ -30,7 +30,7 @@ Each part is independent. You can follow every step or only the ones you like.
 
 ---
 
-## 📋 Before you start
+## 🧺 Before you start
 
 Clone the repo and enter it:
 
@@ -50,9 +50,9 @@ mkdir -p ~/.themes ~/.icons ~/.config/neofetch
 
 ---
 
-## Step 1 · Theme (Kripton v40)
+## 🎨 Step 1 · Theme (Kripton v40)
 
-📂 Folder: `theme/`
+🍂 Folder: `theme/`
 
 1. Extract the theme into your themes folder:
 
@@ -69,13 +69,13 @@ tar -xf theme/Kripton-v40.tar.xz -C ~/.themes
 
 ---
 
-## Step 2 · Icons (Gruvbox-Plus + custom)
+## 🧶 Step 2 · Icons (Gruvbox-Plus + custom)
 
-📂 Folder: `icons/`
+🍂 Folder: `icons/`
 
 This step has 3 parts: the icon pack, your folder color and (optionally) my custom icons.
 
-### 2.1 Install the Gruvbox-Plus icon pack
+### 🌰 2.1 Install the Gruvbox-Plus icon pack
 
 ```bash
 tar -xf icons/gruvbox-plus-icon-pack.6.6.0.tar.gz -C ~/.icons
@@ -83,7 +83,7 @@ tar -xf icons/gruvbox-plus-icon-pack.6.6.0.tar.gz -C ~/.icons
 
 > Original icon pack: [gnome-look.org/p/1961046](https://www.gnome-look.org/p/1961046)
 
-### 2.2 Choose your folder color
+### 🍁 2.2 Choose your folder color
 
 Make the script executable and run it with the color you want:
 
@@ -104,7 +104,7 @@ Other options:
 | `./icons/folders-color-chooser.sh -C` | Reset to the default color (`plasma`) |
 | `./icons/folders-color-chooser.sh -h` | Show help |
 
-### 2.3 Add my custom icons (optional)
+### 🧵 2.3 Add my custom icons (optional)
 
 Copy everything inside `icons/icons-byclunny/` into the icon pack, replacing the existing icons:
 
@@ -115,15 +115,15 @@ cp -r icons/icons-byclunny/* ~/.icons/Gruvbox-Plus-Dark/places/scalable/
 > When asked, choose **replace all**.
 > The color script below only works with **Gruvbox-Plus-Dark**, so use that version.
 
-### 2.4 Apply the icons
+### 🌷 2.4 Apply the icons
 
 Open **System Settings → Themes → Icons** and select **Gruvbox-Plus-Dark**.
 
 ---
 
-## Step 3 · Neofetch
+## ☕ Step 3 · Neofetch
 
-📂 Folder: `neofetch/`
+🍂 Folder: `neofetch/`
 
 > **PREVIEW IMAGE HERE** (screenshot of neofetch)
 
@@ -147,9 +147,9 @@ neofetch
 
 ---
 
-## Step 4 · Fish shell + oh-my-fish (neofetch on startup)
+## 🐟 Step 4 · Fish shell + oh-my-fish (neofetch on startup)
 
-📂 Folder: `others/` (see the `fish commands` file)
+🍂 Folder: `others/` (see the `fish commands` file)
 
 1. Install fish:
 
@@ -183,9 +183,9 @@ funcsave fish_greeting
 
 ---
 
-## Step 5 · Cursor (macOS)
+## 🧸 Step 5 · Cursor (macOS)
 
-📂 Folder: `cursor/`
+🍂 Folder: `cursor/`
 
 1. Extract the cursor pack into your icons folder (it contains two cursors: `macOS` and `macOS-White`):
 
@@ -199,9 +199,9 @@ tar -xf cursor/macOS.tar.xz -C ~/.icons
 
 ---
 
-## Step 6 · Ulauncher + theme
+## 🌙 Step 6 · Ulauncher + theme
 
-📂 Folder: `ulauncher/`
+🍂 Folder: `ulauncher/`
 
 1. Install Ulauncher:
 
@@ -226,7 +226,7 @@ tar -xf ulauncher/Matcha-Dark-Azul-ulauncher.tar.gz -C ~/.config/ulauncher/user-
 
 ---
 
-## ⚡ Final step · Install everything automatically
+## 🍵 Final step · Install everything automatically
 
 Don't want to do it step by step? This one command clones the repo and installs and applies the whole rice:
 
@@ -251,7 +251,7 @@ When it finishes, **log out and log back in** so everything applies.
 
 ---
 
-## 🧩 Credits
+## 🧡 Credits
 
 - Kripton theme: [gnome-look.org/p/1365372](https://www.gnome-look.org/p/1365372)
 - Gruvbox-Plus icon pack: [gnome-look.org/p/1961046](https://www.gnome-look.org/p/1961046)
