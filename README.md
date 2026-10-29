@@ -12,9 +12,9 @@ Gruvbox colors, a clean terminal and a custom look from top to bottom.
 ```
 mint-rice-byclunny/
 ├── theme/      → Kripton v40 theme
-├── icons/      → Gruvbox-Plus icon pack, folder color script and my custom icons
-├── neofetch/   → neofetch config (config.conf) and preview image
-├── others/     → cursor pack, Ulauncher and its theme
+├── icons/      → Gruvbox-Plus icon pack, my custom icons and the folder color script
+├── neofetch/   → neofetch config (config.conf)
+├── others/     → download links and the fish shell commands
 └── README.md
 ```
 
@@ -38,6 +38,8 @@ Create the folders used in the next steps (skip any that already exist):
 mkdir -p ~/.themes ~/.icons ~/.config/neofetch
 ```
 
+> Run every command from inside the `mint-rice-byclunny` folder.
+
 ---
 
 ## Step 0 · Install Linux Mint
@@ -58,16 +60,18 @@ sudo apt update && sudo apt upgrade -y
 
 📂 Folder: `theme/`
 
-1. Copy the theme into your themes folder:
+1. Extract the theme into your themes folder:
 
 ```bash
-cp -r theme/Kripton-v40 ~/.themes/
+tar -xf theme/Kripton-v40.tar.xz -C ~/.themes
 ```
 
 2. Open **System Settings → Themes** and select **Kripton v40** for:
    - Window borders
    - Controls
    - Desktop
+
+> Original theme: [gnome-look.org/p/1365372](https://www.gnome-look.org/p/1365372)
 
 ---
 
@@ -83,38 +87,43 @@ This step has 3 parts: the icon pack, my custom icons and the folder color scrip
 tar -xf icons/gruvbox-plus-icon-pack.6.6.0.tar.gz -C ~/.icons
 ```
 
+> Original icon pack: [gnome-look.org/p/1961046](https://www.gnome-look.org/p/1961046)
+
 ### 2.2 Add my custom icons
 
-1. Extract `icons_byclunny.tar.gz`:
+Copy everything inside `icons/icons-byclunny/` into the icon pack, replacing the existing icons:
 
 ```bash
-tar -xf icons/icons_byclunny.tar.gz -C /tmp
+cp -r icons/icons-byclunny/* ~/.icons/Gruvbox-Plus-Dark/places/scalable/
 ```
 
-2. Copy the extracted icons into the icon pack, replacing the existing ones:
-
-```
-~/.icons/Gruvbox-Plus-Dark/places/scalable/
-```
-
-> Using the light version? Use `Gruvbox-Plus-Light` instead of `Gruvbox-Plus-Dark`.
 > When asked, choose **replace all**.
+> The color script below only works with **Gruvbox-Plus-Dark**, so use that version.
 
 ### 2.3 Change the folder color
 
 Make the script executable and run it with the color you want:
 
 ```bash
-cd icons
-chmod +x folders-color-chooser.sh
-./folders-color-chooser.sh -c grey
+chmod +x icons/folders-color-chooser.sh
+./icons/folders-color-chooser.sh -c grey
 ```
 
-Replace `grey` with any color supported by the script.
+Available colors:
+
+`black` `blue` `caramel` `citron` `firebrick` `gold` `green` `grey` `highland` `jade` `lavender` `lime` `olive` `orange` `pistachio` `plasma` `pumpkin` `purple` `red` `rust` `sapphire` `tomato` `violet` `white` `yellow`
+
+Other options:
+
+| Command | What it does |
+|---|---|
+| `./icons/folders-color-chooser.sh -l` | List all colors |
+| `./icons/folders-color-chooser.sh -C` | Reset to the default color (`plasma`) |
+| `./icons/folders-color-chooser.sh -h` | Show help |
 
 ### 2.4 Apply the icons
 
-Open **System Settings → Themes → Icons** and select **Gruvbox-Plus-Dark** (or Light).
+Open **System Settings → Themes → Icons** and select **Gruvbox-Plus-Dark**.
 
 ---
 
@@ -122,7 +131,7 @@ Open **System Settings → Themes → Icons** and select **Gruvbox-Plus-Dark** (
 
 📂 Folder: `neofetch/`
 
-> **PREVIEW IMAGE HERE** (the preview image from `neofetch/`)
+> **PREVIEW IMAGE HERE** (screenshot of neofetch)
 
 1. Install neofetch:
 
@@ -144,41 +153,55 @@ neofetch
 
 ---
 
-## Step 4 · Cursor
+## Step 4 · Fish shell + oh-my-fish (neofetch on startup)
 
-📂 Folder: `others/`
+📂 Folder: `others/` (see the `fish commands` file)
 
-1. Extract the cursor pack into your icons folder:
+1. Install fish:
 
 ```bash
-tar -xf others/<CURSOR-PACK-NAME>.tar.gz -C ~/.icons
+sudo apt install fish -y
 ```
 
-2. Open **System Settings → Themes → Mouse Pointer** and select **<CURSOR-NAME>**.
+2. Install oh-my-fish:
+
+```bash
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+```
+
+3. Make fish your default shell:
+
+```bash
+chsh -s /usr/bin/fish
+```
+
+4. Run neofetch every time you open a terminal. Open fish and run:
+
+```fish
+function fish_greeting
+    neofetch
+end
+
+funcsave fish_greeting
+```
+
+5. Log out and back in so the default shell change applies.
 
 ---
 
-## Step 5 · Ulauncher + theme
+## Step 5 · Cursor
 
 📂 Folder: `others/`
 
-1. Install Ulauncher:
+> **TODO:** add the cursor name, download link and install steps.
 
-```bash
-sudo add-apt-repository universe -y
-sudo add-apt-repository ppa:agornostal/ulauncher -y
-sudo apt update
-sudo apt install ulauncher -y
-```
+---
 
-2. Copy my theme:
+## Step 6 · Ulauncher + theme
 
-```bash
-mkdir -p ~/.config/ulauncher/user-themes
-cp -r others/<ULAUNCHER-THEME-FOLDER> ~/.config/ulauncher/user-themes/
-```
+📂 Folder: `others/`
 
-3. Open Ulauncher (`Ctrl + Space`), go to **Preferences → Appearance** and select the theme.
+> **TODO:** add the Ulauncher install and theme steps.
 
 ---
 
@@ -194,6 +217,6 @@ Don't want to do it step by step? One command installs the whole rice:
 
 ## 🧩 Credits
 
-- Kripton theme: **<AUTHOR / LINK>**
-- Gruvbox-Plus icon pack: **<AUTHOR / LINK>**
+- Kripton theme: [gnome-look.org/p/1365372](https://www.gnome-look.org/p/1365372)
+- Gruvbox-Plus icon pack: [gnome-look.org/p/1961046](https://www.gnome-look.org/p/1961046)
 - Custom icons, neofetch config and guide: [oclunny](https://github.com/oclunny)
