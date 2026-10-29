@@ -1,0 +1,10 @@
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+
+chsh -s /usr/bin/fish
+
+function fish_greeting                                   
+         neofetch
+     end
+     
+funcsave fish_greeting
+
